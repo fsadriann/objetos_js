@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Objeto Window</title>
+</head>
+<body>
+    <h1>Ejemplo Objeto Window</h1>
+
+    <p>URL actual: <span id="url"></span></p>
+
+    <h2>La propiedad language</h2>
+
+<p id="demo"></p>
+
+    <script>
+        // Mostrar URL actual
+        document.getElementById('url').textContent = window.location.href;
+
+        let language = window.navigator.language;
+        document.getElementById("demo").innerHTML = "Idioma del navegador: " + language;
+    </script>
+</body>
+</html>
