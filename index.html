@@ -1,24 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Ejemplo Objeto Window</title>
+  <title>Ejemplo de Objeto Window</title>
 </head>
 <body>
-    <h1>Ejemplo Objeto Window</h1>
+    
+  <h1>Información de la ventana</h1>
+  <p id="informacion"></p>
 
-    <p>URL actual: <span id="url"></span></p>
+  <script>
+    // Obtener información de la ventana y mostrarla en el párrafo
+    const informacion = document.getElementById('informacion');
+    informacion.innerHTML = `
+      <ul>
+        <li>URL actual: ${window.location.href}</li>
+        <li>Título de la página: ${document.title}</li>
+        <li>Ancho de la ventana: ${window.innerWidth} px</li>
+        <li>Alto de la ventana: ${window.innerHeight} px</li>
+        <li>URL del navegador: ${window.navigator.userAgent}</li>
+      </ul>
+    `;
 
-    <h2>La propiedad language</h2>
+    // Abrir una nueva ventana emergente
+    function abrirNuevaVentana() {
+      window.open('https://www.google.com/', 'Nueva ventana', 'width=400,height=300');
+    }
 
-<p id="demo"></p>
+    // Cambiar el título de la página
+    function cambiarTitulo() {
+      window.document.title = 'Nuevo título';
+    }
+  </script>
 
-    <script>
-        // Mostrar URL actual
-        document.getElementById('url').textContent = window.location.href;
-
-        let language = window.navigator.language;
-        document.getElementById("demo").innerHTML = "Idioma del navegador: " + language;
-    </script>
+  <button onclick="abrirNuevaVentana()">Abrir nueva ventana</button>
+  <button onclick="cambiarTitulo()">Cambiar título</button>
 </body>
 </html>
+
